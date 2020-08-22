@@ -1,0 +1,126 @@
+---
+title: 'Adding Prettier and ESLint to CRA'
+date: '2020-08-11'
+published: true
+---
+
+Let’s create a React app. Go to the folder you usually work in and run:
+
+`npx create-react-app react-eslint-prettier-app`
+
+First, let’s see how to setup Prettier. For that we need to install in our `devDependencies` Prettier and its plugins:
+
+`npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier`
+
+As a reminder, `eslint-config-prettier` will disable all ESLint formatting rules that may conflict with Prettier’s rules. `eslint-plugin-prettier` is the plugin that will add Prettier’s formatting rules.
+
+Then, let’s tell ESLint we’ll use Prettier’s recommended configuration, Add this in `package.json`:
+
+```json
+{
+  "eslintConfig": {
+    "extends": ["react-app", "plugin:prettier/recommended"],
+    "rules": {
+      "no-console": "error"
+    }
+  }
+}
+```
+
+Once done, we need to specify the options to Prettier. For that either create a `.prettierrc` file or add a `prettier` key to the `package.json`. We’ll choose the second option:
+
+```json
+{
+  "prettier": {
+    "printWidth": 90,
+    "bracketSpacing": false,
+    "trailingComma": "es5"
+  }
+}
+```
+
+Let’s add the `pre-commit` hook on staged files. We need to install both `husky` and `lint-staged` in the `devDependencies` for that:
+
+`npm install --save-dev husky lint-staged`
+
+Then, we’ll add the `pre-commit` hook itself by adding a `husky` key to `package.json`:
+
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
+```
+
+If we leave this as-is, it will fail because we haven’t specified the configuration for `lint-staged`, so let’s do it right away:
+
+```json
+{
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,scss}": ["prettier --write"]
+  }
+}
+```
+
+**And voilà! You’re perfectly set up**. Here is the full package.json file:
+
+```json
+{
+  "name": "react-eslint-prettier-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": ["react-app", "plugin:prettier/recommended"],
+		"rules": {
+		   "no-console": "error"
+		}
+  },
+  "prettier": {
+    "printWidth": 85,
+	  "semi": true,
+	  "tabWidth": 2,
+	  "arrowParens": "avoid",
+	  "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,scss}": [
+      "prettier --write"
+    ]
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+```
+
+Reference: [https://thomlom.dev/setup-eslint-prettier-react/](https://thomlom.dev/setup-eslint-prettier-react/)

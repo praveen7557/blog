@@ -1,22 +1,64 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import PersonImage from '../components/image';
+import Dump from '../components/Dump';
+import '../styles/home.scss';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="home-header">
+      <div className="container">
+        <h3 className="intro">
+          Hi!! I'm Praveen Bolla, <br /> a Front-end Developer.
+        </h3>
+        <div className="picture">
+          <PersonImage />
+        </div>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <div className="posts-container container">
+      <h3>
+        Posts{' '}
+        <span role="img" aria-label="Writing Emoji">
+          ✍🏻
+        </span>
+      </h3>
+      <div className="posts-list">
+        {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
+          <Link to={fields.slug}>
+            <h1>{frontmatter.title}</h1>
+            <p>{frontmatter.date}</p>
+            <p>{excerpt}</p>
+          </Link>
+        ))}
+      </div>
+    </div>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
+
+export const query = graphql`
+  query SITE_INDEX_QUERY {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
+      nodes {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          title
+          date
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`;
