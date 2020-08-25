@@ -1,9 +1,57 @@
 @import './fonts.css';
 @import './constants.scss';
 
-*:not(code) {
+*:not(code),
+*:not(pre) {
   font-family: $fontFamily;
   box-sizing: border-box;
+}
+
+pre {
+  text-align: left;
+  margin: 1em 0;
+  padding: 0.5em;
+  overflow-x: auto;
+  border-radius: 3px;
+  position: relative;
+
+  & .token-line {
+    line-height: 1.3em;
+    height: 1.3em;
+  }
+
+  font-family: 'Courier New',
+  Courier,
+  monospace;
+
+  span {
+    font-family: 'Courier New';
+    // display: inline-block;
+    // width: 2em;
+    // user-select: none;
+    // opacity: 0.3;
+
+    &.line-no {
+      display: inline-block;
+      width: 2em;
+      user-select: none;
+      opacity: 0.3;
+    }
+  }
+
+  .copy-to-clipboard {
+    position: absolute;
+    right: 0.25rem;
+    border: 0;
+    border-radius: 3px;
+    margin: 0.25em;
+    opacity: 0.3;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 a {

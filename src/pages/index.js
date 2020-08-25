@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import PersonImage from '../components/image';
-import Dump from '../components/Dump';
+import Img from 'gatsby-image';
 import '../styles/home.scss';
 
 const IndexPage = ({ data }) => (
@@ -30,6 +30,9 @@ const IndexPage = ({ data }) => (
       <div className="posts-list">
         {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
           <Link to={fields.slug}>
+            {!!frontmatter.cover ? (
+              <Img sizes={frontmatter.cover.childImageSharp.sizes} />
+            ) : null}
             <h1>{frontmatter.title}</h1>
             <p>{frontmatter.date}</p>
             <p>{excerpt}</p>
@@ -53,7 +56,15 @@ export const query = graphql`
         excerpt(pruneLength: 250)
         frontmatter {
           title
-          date
+          date(formatString: "YYYY MMMM Do")
+          cover {
+            publicURL
+            childImageSharp {
+              sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
+                ...GatsbyImageSharpSizes_tracedSVG
+              }
+            }
+          }
         }
         fields {
           slug

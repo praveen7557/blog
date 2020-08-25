@@ -2,12 +2,14 @@ import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import Layout from '../components/Layout';
+import SEO from '../components/seo';
 
 export default function BlogPost({ data, pageContext }) {
   const { frontmatter, body } = data.mdx;
   const { previous, next } = pageContext;
   return (
     <Layout>
+      <SEO title={frontmatter.title} />
       <h1>{frontmatter.title}</h1>
       <p>{frontmatter.date}</p>
       <MDXRenderer>{body}</MDXRenderer>
