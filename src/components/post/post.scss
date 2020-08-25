@@ -1,0 +1,25 @@
+@import '../../styles/constants.scss';
+
+.post-item {
+  .gatsby-image-wrapper {
+    height: 250px;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: $color;
+    margin-top: 15px;
+    margin-bottom: 7px;
+  }
+
+  p {
+    color: #767676;
+    font-size: 14px;
+  }
+
+  &:hover {
+    h3 {
+      color: $highlight;
+    }
+  }
+}

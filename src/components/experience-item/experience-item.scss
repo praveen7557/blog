@@ -1,0 +1,66 @@
+@import '../../styles/constants.scss';
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+
+  .logistics {
+    min-width: 160px;
+
+    .location {
+      color: $color;
+    }
+
+    .dates {
+      margin-top: 7px;
+      color: $secondaryColor;
+    }
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+
+    .pic {
+      img {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        border: 2px solid #e4e4e4;
+        padding: 2px;
+      }
+    }
+
+    .role {
+      margin-left: 25px;
+
+      .name {
+        font-weight: bold;
+        font-family: $fontFamilyRegular;
+        margin-bottom: 10px;
+
+        .company {
+          color: $highlight;
+          font-family: $fontFamilyRegular;
+        }
+      }
+
+      .description {
+        color: $secondaryColor;
+        line-height: 22px;
+
+        .tag {
+          color: $color;
+        }
+      }
+    }
+
+  }
+
+  &.baseblock {
+    img {
+      object-fit: contain;
+    }
+  }
+}

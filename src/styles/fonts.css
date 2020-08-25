@@ -2,3 +2,8 @@
   font-family: "Cera Pro";
   src: url("../../static/fonts/cera/CeraPro-Medium.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Cera Pro Light";
+  src: url("../../static/fonts/cera/CeraPro-Light.woff2") format("woff2");
+}

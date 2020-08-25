@@ -18,6 +18,7 @@ exports.createPages = ({ actions, graphql }) => {
           frontmatter {
             title
             date
+            description
           }
         }
       }

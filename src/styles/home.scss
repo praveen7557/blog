@@ -19,6 +19,7 @@
     box-sizing: border-box;
     margin: 0;
     line-height: 30px;
+    font-family: $fontFamilyRegular;
   }
 
 
@@ -38,10 +39,32 @@
   }
 }
 
-.posts-container {
+.posts-container,
+.about-container,
+.experience-container {
   margin-top: 60px;
+  position: relative;
+  z-index: 1000;
 
   h3 {
     font-size: 28px;
+  }
+
+  .posts-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+  }
+}
+
+.about-container {
+  p {
+    color: $secondaryColor;
+    line-height: 30px;
+
+    span {
+      color: $color;
+    }
   }
 }

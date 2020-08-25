@@ -4,8 +4,10 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import PersonImage from '../components/image';
-import Img from 'gatsby-image';
 import '../styles/home.scss';
+import Post from '../components/Post';
+import ExperienceItem from '../components/experience-item';
+import { items } from '../samples/experience';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -28,15 +30,39 @@ const IndexPage = ({ data }) => (
         </span>
       </h3>
       <div className="posts-list">
-        {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
-          <Link to={fields.slug}>
-            {!!frontmatter.cover ? (
-              <Img sizes={frontmatter.cover.childImageSharp.sizes} />
-            ) : null}
-            <h1>{frontmatter.title}</h1>
-            <p>{frontmatter.date}</p>
-            <p>{excerpt}</p>
-          </Link>
+        {data.allMdx.nodes.map(({ frontmatter, fields }) => (
+          <Post
+            frontmatter={frontmatter}
+            fields={fields}
+            key={frontmatter.title}
+          />
+        ))}
+      </div>
+    </div>
+    <div className="about-container container">
+      <h3>
+        About Me{' '}
+        <span role="img" aria-label="Thinking Emoji">
+          🤔
+        </span>
+      </h3>
+      <p>
+        I'm a <span>Front-end Developer</span> working at West Agile Labs,
+        Hyderabad, India. I studied Electronics from IIT Dhanbad. I am a Web
+        Technologies enthusiast. I’m interested in the whole visual part of the
+        web, its usability and performance.
+      </p>
+    </div>
+    <div className="experience-container container">
+      <h3>
+        Work Experience{' '}
+        <span role="img" aria-label="Writing Guy Coding">
+          👨🏽‍💻
+        </span>
+      </h3>
+      <div className="experience-list">
+        {items.map(e => (
+          <ExperienceItem key={e.key} item={e} />
         ))}
       </div>
     </div>
@@ -57,11 +83,12 @@ export const query = graphql`
         frontmatter {
           title
           date(formatString: "YYYY MMMM Do")
+          description
           cover {
             publicURL
             childImageSharp {
-              sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
-                ...GatsbyImageSharpSizes_tracedSVG
+              sizes(maxWidth: 700, maxHeight: 250) {
+                ...GatsbyImageSharpSizes
               }
             }
           }
