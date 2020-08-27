@@ -1,0 +1,17 @@
+@import '../../styles/constants.scss';
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+  align-items: center;
+  background-color: $background;
+  color: #fff !important;
+
+  a {
+    display: inline-block;
+    margin-left: 20px;
+    color: #fff !important;
+    text-decoration: underline;
+  }
+}

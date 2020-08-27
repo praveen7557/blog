@@ -8,6 +8,7 @@ import '../styles/home.scss';
 import Post from '../components/Post';
 import ExperienceItem from '../components/experience-item';
 import { items } from '../samples/experience';
+import Footer from '../components/footer';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -66,6 +67,7 @@ const IndexPage = ({ data }) => (
         ))}
       </div>
     </div>
+    <Footer></Footer>
   </Layout>
 );
 
