@@ -60,6 +60,7 @@
   iframe {
     margin: 40px auto;
     display: block;
+    max-width: 100%;
   }
 
   .nav-items {
@@ -69,18 +70,45 @@
 
   .nav-link {
     color: $highlight;
+
+    &.right {
+      text-align: right;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .head-content {
+    height: 365px;
+
+    .about-content {
+      width: 90% !important;
+    }
+  }
+
+  .blog-content {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width:768px) {
+  .cover {
+    .gatsby-image-wrapper {
+      height: 100%;
+    }
   }
 }
 
 @media (max-width: 576px) {
   .head-content {
     flex-direction: column;
+    height: initial;
 
     .about {
       width: 100%;
 
       .about-content {
-        width: 100%;
+        width: 100% !important;
         padding: 0 25px;
         padding-top: 30px;
 
@@ -93,5 +121,9 @@
     .cover {
       width: 100%;
     }
+  }
+
+  .nav-link {
+    font-size: 13px;
   }
 }

@@ -49,7 +49,7 @@ export default function BlogPost({ data, pageContext }) {
             {next === false ? null : (
               <>
                 {next && (
-                  <Link to={next.fields.slug} className="nav-link">
+                  <Link to={next.fields.slug} className="nav-link right">
                     <p>
                       {next.frontmatter.title}{' '}
                       <span className="nav-icon">→</span>
