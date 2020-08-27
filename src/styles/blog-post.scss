@@ -71,3 +71,27 @@
     color: $highlight;
   }
 }
+
+@media (max-width: 576px) {
+  .head-content {
+    flex-direction: column;
+
+    .about {
+      width: 100%;
+
+      .about-content {
+        width: 100%;
+        padding: 0 25px;
+        padding-top: 30px;
+
+        .title {
+          font-size: 34px;
+        }
+      }
+    }
+
+    .cover {
+      width: 100%;
+    }
+  }
+}

@@ -23,3 +23,19 @@
     }
   }
 }
+
+@media (max-width:768px) {
+  .post-item {
+    .gatsby-image-wrapper {
+      height: 200px;
+    }
+  }
+}
+
+@media (max-width:576px) {
+  .post-item {
+    .gatsby-image-wrapper {
+      height: 230px;
+    }
+  }
+}

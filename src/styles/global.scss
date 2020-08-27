@@ -70,3 +70,19 @@ a {
 .posts-page {
   margin-bottom: 50px;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 80%
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%
+  }
+
+  .copy-to-clipboard {
+    display: none !important;
+  }
+}

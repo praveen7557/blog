@@ -62,10 +62,46 @@
 .about-container {
   p {
     color: $secondaryColor;
-    line-height: 30px;
+    line-height: 35px;
 
     span {
       color: $color;
+      font-family: $fontFamilyRegular;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-header {
+    height: 400px;
+
+    .picture {
+      height: 300px;
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .home-header {
+    height: 280px;
+
+    .container {
+      flex-direction: column-reverse;
+
+      .picture {
+        height: 280px;
+        width: 280px;
+      }
+    }
+
+    .intro {
+      z-index: 100;
+      margin-bottom: 10px;
+    }
+  }
+
+  .posts-list {
+    grid-template-columns: repeat(1, 1fr) !important;
   }
 }

@@ -19,11 +19,16 @@ export default function ExperienceItem({ item }) {
         <div className="dates">{dates}</div>
       </div>
       <div className="details">
-        <div className="pic">
-          <img src={logo} alt={company} />
+        <div className="pic-container">
+          <div className="pic">
+            <img src={logo} alt={company} />
+          </div>
+          <div className="name mobile">
+            {role} - <span className="company">{company}</span>
+          </div>
         </div>
         <div className="role">
-          <div className="name">
+          <div className="name desktop">
             {role} - <span className="company">{company}</span>
           </div>
           <div className="description">

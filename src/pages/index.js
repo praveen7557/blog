@@ -4,7 +4,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import PersonImage from '../components/image';
 import '../styles/home.scss';
-import Post from '../components/Post';
 import ExperienceItem from '../components/experience-item';
 import { items } from '../samples/experience';
 import Posts from 'components/posts';
@@ -34,7 +33,9 @@ const IndexPage = () => (
         I'm a <span>Front-end Developer</span> working at West Agile Labs,
         Hyderabad, India. I studied Electronics from IIT Dhanbad. I am a Web
         Technologies enthusiast. I’m interested in the whole visual part of the
-        web, its usability and performanc.
+        web, its usability and performance. My professional experience includes
+        bringing the wireframes of the UX designer to life through HTML5, CSS3,
+        JS, VueJs and ReactJs.
       </p>
     </div>
     <div className="experience-container container">

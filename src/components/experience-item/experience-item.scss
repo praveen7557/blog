@@ -35,17 +35,6 @@
     .role {
       margin-left: 25px;
 
-      .name {
-        font-weight: bold;
-        font-family: $fontFamilyRegular;
-        margin-bottom: 10px;
-
-        .company {
-          color: $highlight;
-          font-family: $fontFamilyRegular;
-        }
-      }
-
       .description {
         color: $secondaryColor;
         line-height: 22px;
@@ -56,11 +45,71 @@
       }
     }
 
+    .name {
+      font-weight: bold;
+      font-family: $fontFamilyRegular;
+      margin-bottom: 10px;
+
+      .company {
+        color: $highlight;
+        font-family: $fontFamilyRegular;
+      }
+    }
+
   }
 
   &.baseblock {
     img {
       object-fit: contain;
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media(max-width:576px) {
+  .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .logistics {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      .dates {
+        margin: 0;
+      }
+    }
+
+    .details {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .pic-container {
+        display: flex;
+        align-items: center;
+
+        .name {
+          margin-left: 20px;
+        }
+      }
+
+      .role {
+        margin: 0;
+        margin-top: 20px;
+      }
+    }
+
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
     }
   }
 }
