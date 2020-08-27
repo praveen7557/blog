@@ -3,34 +3,64 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
+import Img from 'gatsby-image';
+import '../styles/blog-post.scss';
 
 export default function BlogPost({ data, pageContext }) {
-  const { frontmatter, body } = data.mdx;
+  const {
+    frontmatter: { date, title, description, cover },
+    body,
+  } = data.mdx;
   const { previous, next } = pageContext;
+
   return (
     <Layout>
-      <SEO title={frontmatter.title} />
-      <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.date}</p>
-      <MDXRenderer>{body}</MDXRenderer>
-      {previous === false ? null : (
-        <>
-          {previous && (
-            <Link to={previous.fields.slug}>
-              <p>{previous.frontmatter.title}</p>
-            </Link>
-          )}
-        </>
-      )}
-      {next === false ? null : (
-        <>
-          {next && (
-            <Link to={next.fields.slug}>
-              <p>{next.frontmatter.title}</p>
-            </Link>
-          )}
-        </>
-      )}
+      <SEO title={title} />
+      <div className="head-content">
+        <div className="about">
+          <div className="about-content">
+            <div className="date">{date}</div>
+            <h1 className="title">{title}</h1>
+            <p className="description">{description}</p>
+          </div>
+        </div>
+        <div className="cover">
+          {cover ? <Img fluid={cover.childImageSharp.sizes} /> : null}
+        </div>
+      </div>
+      <div className="blog-content">
+        <MDXRenderer>{body}</MDXRenderer>
+        <div className="nav-items">
+          <div>
+            {previous === false ? null : (
+              <>
+                {previous && (
+                  <Link to={previous.fields.slug} className="nav-link">
+                    <p>
+                      <span className="nav-icon">←</span>{' '}
+                      {previous.frontmatter.title}
+                    </p>
+                  </Link>
+                )}
+              </>
+            )}
+          </div>
+          <div>
+            {next === false ? null : (
+              <>
+                {next && (
+                  <Link to={next.fields.slug} className="nav-link">
+                    <p>
+                      {next.frontmatter.title}{' '}
+                      <span className="nav-icon">→</span>
+                    </p>
+                  </Link>
+                )}
+              </>
+            )}
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
@@ -41,7 +71,16 @@ export const query = graphql`
       body
       frontmatter {
         title
-        date(formatString: "YYYY MMMM Do")
+        date(formatString: "DD MMMM YYYY")
+        description
+        cover {
+          publicURL
+          childImageSharp {
+            sizes(maxWidth: 700, maxHeight: 500) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,73 @@
+@import './constants.scss';
+
+.head-content {
+  display: flex;
+  height: 500px;
+
+  .about {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .about-content {
+      padding-right: 60px;
+      width: 75%;
+
+      .date {
+        color: $secondaryColor;
+      }
+
+      .title {
+        font-family: $fontFamilyRegular;
+        font-size: 40px;
+        margin: 15px 0;
+      }
+
+      .description {
+        color: $secondaryColor;
+      }
+    }
+  }
+
+  .cover {
+    width: 50%;
+  }
+}
+
+.blog-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 30px;
+  font-weight: 700;
+
+  code,
+  pre {
+    font-weight: 400;
+  }
+
+  code {
+    padding: 2px 3px 1px;
+    border: 1px solid rgba(29, 28, 29, 0.04);
+    border-radius: 3px;
+    background-color: rgba(29, 28, 29, 0.04);
+    color: #e01e5a;
+    font-family: 'Courier New';
+    font-size: 14px;
+  }
+
+  iframe {
+    margin: 40px auto;
+    display: block;
+  }
+
+  .nav-items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-link {
+    color: $highlight;
+  }
+}

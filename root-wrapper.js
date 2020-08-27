@@ -1,12 +1,10 @@
 import { MDXProvider } from '@mdx-js/react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/nightOwl';
 import React from 'react';
 import Code from './src/components/code';
 
 const components = {
-  // pre: props => <Code {...props} />,
   pre: ({ children: { props } }) => {
+    console.log(props);
     if (props.mdxType === 'code') {
       return (
         <Code

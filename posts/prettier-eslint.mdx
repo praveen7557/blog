@@ -8,11 +8,15 @@ description: 'Some Random Description, Right it whatever you want.'
 
 Let’s create a React app. Go to the folder you usually work in and run:
 
-`npx create-react-app react-eslint-prettier-app`
+```bash
+npx create-react-app react-eslint-prettier-app
+```
 
 First, let’s see how to setup Prettier. For that we need to install in our `devDependencies` Prettier and its plugins:
 
-`npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier`
+```bash
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+```
 
 As a reminder, `eslint-config-prettier` will disable all ESLint formatting rules that may conflict with Prettier’s rules. `eslint-plugin-prettier` is the plugin that will add Prettier’s formatting rules.
 
@@ -43,7 +47,9 @@ Once done, we need to specify the options to Prettier. For that either create a�
 
 Let’s add the `pre-commit` hook on staged files. We need to install both `husky` and `lint-staged` in the `devDependencies` for that:
 
-`npm install --save-dev husky lint-staged`
+```bash
+npm install --save-dev husky lint-staged
+```
 
 Then, we’ll add the `pre-commit` hook itself by adding a `husky` key to `package.json`:
 
