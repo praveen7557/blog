@@ -67,6 +67,16 @@
   .mobile {
     display: none;
   }
+
+  &.active {
+    .details {
+      .pic {
+        img {
+          border: 2px solid $highlight;
+        }
+      }
+    }
+  }
 }
 
 @media(max-width:576px) {

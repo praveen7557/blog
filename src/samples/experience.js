@@ -9,6 +9,7 @@ export const items = [
     description:
       "I'm working for Apple as a frontend developer self-employed contractor to improve the visual part of their websites. I work for Cupertino, California remotely from Barcelona. At the moment I'm learning",
     tags: ['#reactjs', '#vuejs', '#CleanCode'],
+    active: true,
   },
   {
     key: 2,

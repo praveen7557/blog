@@ -11,9 +11,10 @@ export default function ExperienceItem({ item }) {
     description,
     tags = [],
     className,
+    active = '',
   } = item;
   return (
-    <div className={`experience-item ${className}`}>
+    <div className={`experience-item ${className} ${active && 'active'}`}>
       <div className="logistics">
         <div className="location">{location}</div>
         <div className="dates">{dates}</div>
