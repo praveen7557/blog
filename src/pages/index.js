@@ -10,7 +10,7 @@ import Posts from 'components/posts';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Praveen Bolla - Front-end Developer" />
     <div className="home-header">
       <div className="container">
         <h3 className="intro">
