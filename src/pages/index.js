@@ -35,7 +35,10 @@ const IndexPage = () => (
         of 5 years experience. I am a Web Technologies enthusiast. I’m
         interested in the whole visual part of the web, its usability and
         performance. I'm quietly confident, naturally curious, and perpetually
-        working on improving my chops one problem at a time.
+        working on improving my chops one problem at a time. Frontend is my true
+        passion and I really enjoy the whole process of creating UIs. From the
+        first brainstorming, wireframes, mockups, design, all the way until the
+        final product.
       </p>
     </div>
     <div className="experience-container container">
