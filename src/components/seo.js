@@ -70,6 +70,10 @@ function SEO({ description, lang, meta, title, img }) {
           content: `summary_large_image`,
         },
         {
+          name: `twitter:site`,
+          content: `/`,
+        },
+        {
           name: `twitter:image`,
           content: image,
         },
