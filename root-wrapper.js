@@ -4,7 +4,6 @@ import Code from './src/components/code';
 
 const components = {
   pre: ({ children: { props } }) => {
-    console.log(props);
     if (props.mdxType === 'code') {
       return (
         <Code

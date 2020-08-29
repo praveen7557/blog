@@ -26,8 +26,21 @@ function SEO({ description, lang, meta, title, img }) {
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-  const image = img || site.siteMetadata.image;
+  const defaults = site.siteMetadata;
+
+  let baseUrl = '';
+
+  if (typeof window !== 'undefined') {
+    baseUrl = window.location.origin;
+  }
+
+  if (baseUrl === '') {
+    console.error('Please set a baseUrl in your site metadata!');
+    return null;
+  }
+
+  const metaDescription = description || defaults.description;
+  const image = img || defaults.image;
 
   return (
     <Helmet
@@ -55,10 +68,6 @@ function SEO({ description, lang, meta, title, img }) {
         {
           name: `twitter:card`,
           content: `summary_large_image`,
-        },
-        {
-          name: `twitter:site`,
-          content: `/`,
         },
         {
           name: `twitter:image`,
@@ -90,8 +99,8 @@ function SEO({ description, lang, meta, title, img }) {
           content: image,
         },
         {
-          name: `og:url`,
-          content: '/',
+          property: `og:url`,
+          content: baseUrl,
         },
       ].concat(meta)}
     />
