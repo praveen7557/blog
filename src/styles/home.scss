@@ -105,3 +105,17 @@
     grid-template-columns: repeat(1, 1fr) !important;
   }
 }
+
+.not-found {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h1,
+  a {
+    font-family: $fontFamilyRegular;
+  }
+}
