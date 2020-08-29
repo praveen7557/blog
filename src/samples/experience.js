@@ -5,9 +5,9 @@ export const items = [
     company: 'West Agile Labs',
     location: 'Hyderabad, India',
     dates: "Jan'19 - now",
-    logo: 'https://www.westagilelabs.com/assets/seo/social-media.png',
+    logo: 'https://i.imgur.com/Go6fp9h.png',
     description:
-      "I'm working for Apple as a frontend developer self-employed contractor to improve the visual part of their websites. I work for Cupertino, California remotely from Barcelona. At the moment I'm learning",
+      'I am working here at West Agile Labs as a Front-end Developer to develop Single Page Applications using Front-end Frameworks. My responsibilities include feature development, Code Reviews, Giving estimates and being a part of architectural decisions.',
     tags: ['#reactjs', '#vuejs', '#CleanCode'],
     active: true,
   },
@@ -19,7 +19,7 @@ export const items = [
     dates: "Mar'18 - Dec'18",
     logo: 'https://i.imgur.com/rgxm7R8.png',
     description:
-      "I'm working for Apple as a frontend developer self-employed contractor to improve the visual part of their websites. I work for Cupertino, California remotely from Barcelona. At the moment I'm learning",
+      'I was in the company from the bootstrap stage, and developed the product here from the scratch. Worked here in both Front-end and Back-end technologies. Managed a team of 3 people. Explored lot about Crypto technologies here.',
     tags: ['#vuejs', '#nodejs', '#web3'],
     className: 'baseblock',
   },
@@ -31,7 +31,7 @@ export const items = [
     dates: "Jun'15 - Mar'18",
     logo: 'https://i.imgur.com/75O9OfK.jpg',
     description:
-      "I'm working for Apple as a frontend developer self-employed contractor to improve the visual part of their websites. I work for Cupertino, California remotely from Barcelona. At the moment I'm learning",
+      'Started my professional career with this company. Learned a lot about web technologies here. Worked a lot on Analytical Visualizations using jQuery and HighCharts.',
     tags: ['#js', '#ASP.NET', '#jQuery'],
   },
   {
@@ -40,10 +40,9 @@ export const items = [
     company: 'IIT(ISM) Dhanbad',
     location: 'Dhanbad, Jharkhand',
     dates: "Jul'2011 - Jun'2015",
-    logo:
-      'https://upload.wikimedia.org/wikipedia/en/b/b0/Indian_Institute_of_Technology_%28Indian_School_of_Mines%29%2C_Dhanbad_Logo.png',
+    logo: 'https://i.imgur.com/cqlDxlD.png',
     description:
-      "I'm working for Apple as a frontend developer self-employed contractor to improve the visual part of their websites. I work for Cupertino, California remotely from Barcelona. At the moment I'm learning",
+      'Did my Bachelors degree in Electronics and Communications at IIT Dhanbad.',
     tags: ['#electronics', '#C', '#matlab'],
   },
 ];

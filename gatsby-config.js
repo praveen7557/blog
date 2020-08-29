@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Praveen Bolla - Front end Developer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `I'm a Front-end Developer from Hyderabad, India. Proficient with ReactJs and VueJs.`,
     author: `praveen7557`,
     brand: `Praveen Bolla.`,
+    image: `https://i.imgur.com/5pOwyOs.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

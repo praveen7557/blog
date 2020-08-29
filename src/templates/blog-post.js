@@ -15,7 +15,7 @@ export default function BlogPost({ data, pageContext }) {
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={description} img={cover.publicURL} />
       <div className="head-content">
         <div className="about">
           <div className="about-content">

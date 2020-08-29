@@ -31,11 +31,11 @@ const IndexPage = () => (
       </h3>
       <p>
         I'm a <span>Front-end Developer</span> working at West Agile Labs,
-        Hyderabad, India. I studied Electronics from IIT Dhanbad. I am a Web
-        Technologies enthusiast. I’m interested in the whole visual part of the
-        web, its usability and performance. My professional experience includes
-        bringing the wireframes of the UX designer to life through HTML5, CSS3,
-        JS, VueJs and ReactJs.
+        Hyderabad, India. I studied Electronics from IIT Dhanbad. I have a total
+        of 5 years experience. I am a Web Technologies enthusiast. I’m
+        interested in the whole visual part of the web, its usability and
+        performance. I'm quietly confident, naturally curious, and perpetually
+        working on improving my chops one problem at a time.
       </p>
     </div>
     <div className="experience-container container">
