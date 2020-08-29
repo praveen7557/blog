@@ -83,7 +83,7 @@ function SEO({ description, lang, meta, title, img }) {
             'praveen bolla,praveen,bolla,freelancer,free-lance,fullstack,vue,react,node,mongo,freelancer at hyderabad,hyderabad',
         },
         {
-          name: `og:image`,
+          property: `og:image`,
           content: image,
         },
       ].concat(meta)}
